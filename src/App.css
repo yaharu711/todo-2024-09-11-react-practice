@@ -1,0 +1,45 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  /* emはフォントサイズに対する相対的な単位。今回はフォントサイズ定義されていないのでブラウザデフォルトの16pxとなる。よって、6em = 16 * 6 = 96pxとなる */
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* @mediaでprefers-reduced-motion: no-preferenceを定義することで、激しいアニメーションをOFFにしている場合はアニメーションが適応されないように動的な設定ができる */
+@media (prefers-reduced-motion: no-preference) {
+  .logo.react {
+    /* 適応するクラス名、無限にアニメーション実行、20秒かけてアニメーション実行、等速でアニメーション実行と定義されている */
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
