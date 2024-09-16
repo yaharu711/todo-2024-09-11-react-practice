@@ -1,12 +1,12 @@
-import TodoButton from "./TodoButton";
+import TodoItem from "./TodoItem";
 
 /* eslint-disable react/prop-types */
-function CompleteTodo({
+const CompleteTodo = ({
     imcompletedTodoNames,
     setImcompletedTodoNames,
     completedTodoNames,
     setCompletedTodoNames
-}) {
+}) => {
     const imcompleteTodo = (target) => {
         const newCompletedTodoNames = completedTodoNames.filter((completedTodoName) => completedTodoName !== target);
         setCompletedTodoNames(newCompletedTodoNames);
@@ -28,18 +28,16 @@ function CompleteTodo({
         {
             completedTodoNames.map((completedTodoName, index) => {
             return (
-                <li key={index}>
-                <div style={{
-                    display: "flex",
-                    // 各要素を均等に配置し、先頭は左、末尾は右に配置するようにできる
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    gap: "8px"
-                }}>
-                    <p>{completedTodoName}</p>
-                    <TodoButton onClick={() => imcompleteTodo(completedTodoName)} text="戻す" />
-                </div>
-                </li>
+                <TodoItem
+                    key={index}
+                    todoName={completedTodoName}
+                    buttons={[
+                        {
+                            text: "未完了",
+                            onClick: () => imcompleteTodo(completedTodoName)
+                        },
+                    ]}
+                />
             );
         })}
         </ul>

@@ -1,4 +1,4 @@
-import TodoButton from "./TodoButton";
+import TodoItem from "./TodoItem";
 
 /* eslint-disable react/prop-types */
 const ImcompletedTodo = ({
@@ -12,7 +12,6 @@ const ImcompletedTodo = ({
         const newImcompletedTodoNames = imcompletedTodoNames.filter((imcompletedTodoName) => imcompletedTodoName !== target);
         setImcompletedTodoNames(newImcompletedTodoNames);
     }
-    
     const completeTodo = (target) => {
         setCompletedTodoNames([...completedTodoNames, target]);
         deleteImcompletedTodo(target);
@@ -33,24 +32,20 @@ const ImcompletedTodo = ({
             {
                 imcompletedTodoNames.map((imcompletedTodoName, index) => {
                 return (
-                    <li key={index}>
-                        <div style={{
-                            display: "flex",
-                            // 各要素を均等に配置し、先頭は左、末尾は右に配置するようにできる
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            gap: "8px"
-                        }}>
-                            <p>{imcompletedTodoName}</p>
-                            <div style={{
-                                  display: "flex",
-                                  gap: "10px"
-                            }}>
-                                <TodoButton onClick={() => completeTodo(imcompletedTodoName)} text="完了" />
-                                <TodoButton onClick={() => deleteImcompletedTodo(imcompletedTodoName)} text="削除" />
-                            </div>
-                        </div>
-                    </li>
+                    <TodoItem
+                        key={index}
+                        todoName={imcompletedTodoName}
+                        buttons={[
+                            {
+                                text: "完了",
+                                onClick: () => completeTodo(imcompletedTodoName)
+                            },
+                            {
+                                text: "削除",
+                                onClick: () => deleteImcompletedTodo(imcompletedTodoName)
+                            }
+                        ]}
+                    />
                 );
             })}
             </ul>

@@ -1,0 +1,12 @@
+.todoItme {
+    display: flex;
+    /* 各要素を均等に配置し、先頭は左、末尾は右に配置するようにできる */
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.buttonArea {
+    display: flex;
+    gap: 10px;
+}
