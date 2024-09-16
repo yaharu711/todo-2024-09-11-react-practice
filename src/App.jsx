@@ -1,5 +1,5 @@
 import { useState } from "react"
-import TodoInput from "./components/TodoInput";
+import AddTodo from "./components/AddTodo";
 import ImcompletedTodo from "./components/ImcompletedTodo";
 import CompleteTodo from "./components/CompletedTodo";
 
@@ -31,14 +31,18 @@ const App = () => {
     setCompletedTodoNames
   }
 
-
   return (
     // <React.Fragment>は以下の<>と同じ。JSXは一つの要素で囲っていないとエラーがでるので、そのためにdivタグを使わずに済むのが以下のもの。
-    <>
-      <TodoInput {...todoInputComponentArguments} />
+    <div style={{    
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      }}>
+      <AddTodo {...todoInputComponentArguments} />
       <ImcompletedTodo {...ImcompletedTodoComponentArguments} />
       <CompleteTodo {...completedTodoComponentArguments} />
-    </>
+    </div>
   )
 }
 

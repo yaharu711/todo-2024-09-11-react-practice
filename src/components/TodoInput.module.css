@@ -1,0 +1,10 @@
+.input {
+    height: 20px;
+    border-radius: 5px;
+    border: 3px #077d7d80 solid;
+}
+
+.input:focus {
+    border-color: rgba(40, 247, 247, 0.5);
+    outline: none;
+}
