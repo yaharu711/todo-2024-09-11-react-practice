@@ -20,7 +20,8 @@ function CompleteTodo({
         alignItems: "center",
         width: "800px",
         padding: "16px",
-        border: "2px solid #646cffaa"
+        border: "2px solid #646cffaa",
+        borderRadius: "10px"
     }}>
         <p>完了のTODO</p>
         <ul>

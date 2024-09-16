@@ -25,7 +25,8 @@ const ImcompletedTodo = ({
             alignItems: "center",
             width: "800px",
             padding: "16px",
-            border: "2px solid #61dafbaa"
+            border: "2px solid #61dafbaa",
+            borderRadius: "10px"
         }}>
             <p>未完了のTODO</p>
             <ul>

@@ -44,7 +44,8 @@ const AddTodo = ({
             textAlign: "center",
             width: "800px",
             padding: "16px",
-            border: "2px solid #646cffaa"
+            border: "2px solid rgba(0, 152, 175, 0.746)",
+            borderRadius: "10px"
         }}>
             <div style={{
                 display: "flex",
