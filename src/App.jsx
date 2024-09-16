@@ -38,7 +38,8 @@ const App = () => {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      }}>
+      rowGap: "16px"
+    }}>
       <AddTodo {...todoInputComponentArguments} />
       <ImcompletedTodo {...ImcompletedTodoComponentArguments} />
       <CompleteTodo {...completedTodoComponentArguments} />
